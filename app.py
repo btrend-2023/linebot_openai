@@ -32,8 +32,8 @@ def GPT_response(text):
     print(response)
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
-    return answer
-
+    #return answer
+    return response
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
