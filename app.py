@@ -32,10 +32,10 @@ def GPT_response(text):
     print('**********************************test after openai')
     print(response)
     # 重組回應
-    #answer = response['choices'][0]['text'].replace('。','')
+    answer = response['choices'][0]['text'].replace('。','')
     #print(answer)
-    #return answer
-    return response
+    return answer
+    #return response
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
