@@ -23,7 +23,7 @@ line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
-
+'''
 def GPT_response(text):
     response = openai.Completion.create(
         model="gpt-3.5-turbo",
@@ -37,8 +37,8 @@ def GPT_response(text):
 '''
 def GPT_response(text):
     # 接收回應
-    #response = openai.Completion.create(model="text-davinci-003", prompt=text, temperature=0.5, max_tokens=500)
-    response = openai.Completion.create(model="gpt-3.5-turbo", prompt=text, temperature=0.5, max_tokens=500)
+    response = openai.Completion.create(model="text-davinci-003", prompt=text, temperature=0.5, max_tokens=500)
+    #response = openai.Completion.create(model="gpt-3.5-turbo", prompt=text, temperature=0.5, max_tokens=500)
     #response = 'test from openai'
     print('**********************************test after openai')
     print(response)
@@ -47,7 +47,7 @@ def GPT_response(text):
     #print(answer)
     return answer
     #return response
-'''
+
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
